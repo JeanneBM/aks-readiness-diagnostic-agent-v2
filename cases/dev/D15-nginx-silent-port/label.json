@@ -1,0 +1,9 @@
+{
+  "split": "dev",
+  "expected": "insufficient_evidence",
+  "injected": "probe_port_mismatch",
+  "framework": "nginx",
+  "origin": "synthetic",
+  "basis": "The nginx image logs entrypoint steps but not the listen port.",
+  "citations": []
+}

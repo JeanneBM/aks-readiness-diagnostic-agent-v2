@@ -1,0 +1,55 @@
+{
+  "schema": 2,
+  "target": "selected-pod/selected-container",
+  "observations": [
+    {
+      "id": "status",
+      "kind": "pod_status",
+      "source": "pod/status",
+      "text": "selected container ready=False; Pod Ready=False since 2026-11-13T10:00:05Z",
+      "data": {
+        "container_ready": false,
+        "pod_ready": "False",
+        "pod_ready_since": "2026-11-13T10:00:05Z"
+      }
+    },
+    {
+      "id": "probe",
+      "kind": "probe_config",
+      "source": "pod/spec/readinessProbe/httpGet",
+      "text": "{\"scheme\": \"HTTP\", \"port\": 8080, \"path\": \"/actuator/health/readiness\"}",
+      "data": {
+        "scheme": "HTTP",
+        "port": 8080,
+        "path": "/actuator/health/readiness"
+      }
+    },
+    {
+      "id": "events",
+      "kind": "probe_failures",
+      "source": "pod/events/readiness",
+      "text": "2026-11-13T10:00:55Z x12: Readiness probe failed: HTTP probe failed with statuscode: 404",
+      "data": {
+        "events": [
+          {
+            "message": "Readiness probe failed: HTTP probe failed with statuscode: 404",
+            "count": 12,
+            "last_seen": "2026-11-13T10:00:55Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "logs",
+      "kind": "app_log",
+      "source": "container/logs/all",
+      "text": "2026-11-13T10:00:02.000000000Z INFO 1 --- [main] com.example.demo.DemoApplication : Starting DemoApplication v0.0.1 using Java 21\n2026-11-13T10:00:04.000000000Z INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer : Tomcat initialized with port 8080 (http)\n2026-11-13T10:00:06.000000000Z INFO 1 --- [main] o.s.b.a.e.web.EndpointLinksResolver : Exposing 1 endpoint beneath base path '/actuator'\n2026-11-13T10:00:06.000000000Z INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer : Tomcat started on port 8080 (http) with context path '/api'"
+    },
+    {
+      "id": "snapshot",
+      "kind": "limitation",
+      "source": "collector",
+      "text": "Reads are sequential, not atomic. Logs cover the current container instance only."
+    }
+  ]
+}

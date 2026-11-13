@@ -1,0 +1,15 @@
+{
+  "split": "dev",
+  "expected": "probe_path_mismatch",
+  "injected": "probe_path_mismatch",
+  "framework": "spring-boot",
+  "origin": "synthetic",
+  "basis": "Probe on /health; Actuator endpoints live under /actuator.",
+  "citations": [
+    [
+      "probe",
+      "events",
+      "logs"
+    ]
+  ]
+}

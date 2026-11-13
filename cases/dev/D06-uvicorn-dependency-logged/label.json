@@ -1,0 +1,14 @@
+{
+  "split": "dev",
+  "expected": "dependency_unavailable",
+  "injected": "dependency_unavailable",
+  "framework": "uvicorn",
+  "origin": "synthetic",
+  "basis": "Readiness returns 503; the app logs the urllib error text for an unresolvable host.",
+  "citations": [
+    [
+      "events",
+      "logs"
+    ]
+  ]
+}

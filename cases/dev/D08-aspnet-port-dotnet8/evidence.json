@@ -1,0 +1,55 @@
+{
+  "schema": 2,
+  "target": "selected-pod/selected-container",
+  "observations": [
+    {
+      "id": "status",
+      "kind": "pod_status",
+      "source": "pod/status",
+      "text": "selected container ready=False; Pod Ready=False since 2026-11-13T10:00:05Z",
+      "data": {
+        "container_ready": false,
+        "pod_ready": "False",
+        "pod_ready_since": "2026-11-13T10:00:05Z"
+      }
+    },
+    {
+      "id": "probe",
+      "kind": "probe_config",
+      "source": "pod/spec/readinessProbe/httpGet",
+      "text": "{\"scheme\": \"HTTP\", \"port\": 80, \"path\": \"/healthz\"}",
+      "data": {
+        "scheme": "HTTP",
+        "port": 80,
+        "path": "/healthz"
+      }
+    },
+    {
+      "id": "events",
+      "kind": "probe_failures",
+      "source": "pod/events/readiness",
+      "text": "2026-11-13T10:00:55Z x12: Readiness probe failed: Get \"http://10.244.0.17:80/healthz\": dial tcp 10.244.0.17:80: connect: connection refused",
+      "data": {
+        "events": [
+          {
+            "message": "Readiness probe failed: Get \"http://10.244.0.17:80/healthz\": dial tcp 10.244.0.17:80: connect: connection refused",
+            "count": 12,
+            "last_seen": "2026-11-13T10:00:55Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "logs",
+      "kind": "app_log",
+      "source": "container/logs/all",
+      "text": "2026-11-13T10:00:01.000000000Z info: Microsoft.Hosting.Lifetime[14]\n2026-11-13T10:00:01.000000000Z       Now listening on: http://[::]:8080\n2026-11-13T10:00:01.000000000Z info: Microsoft.Hosting.Lifetime[0]\n2026-11-13T10:00:01.000000000Z       Application started. Press Ctrl+C to shut down."
+    },
+    {
+      "id": "snapshot",
+      "kind": "limitation",
+      "source": "collector",
+      "text": "Reads are sequential, not atomic. Logs cover the current container instance only."
+    }
+  ]
+}

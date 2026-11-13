@@ -1,0 +1,15 @@
+{
+  "split": "dev",
+  "expected": "listener_loopback_only",
+  "injected": "listener_loopback_only",
+  "framework": "werkzeug",
+  "origin": "synthetic",
+  "basis": "flask run binds 127.0.0.1 by default.",
+  "citations": [
+    [
+      "probe",
+      "events",
+      "logs"
+    ]
+  ]
+}

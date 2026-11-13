@@ -1,0 +1,15 @@
+{
+  "split": "dev",
+  "expected": "listener_loopback_only",
+  "injected": "listener_loopback_only",
+  "framework": "uvicorn",
+  "origin": "synthetic",
+  "basis": "uvicorn binds 127.0.0.1 unless --host is given; the kubelet probes the Pod IP.",
+  "citations": [
+    [
+      "probe",
+      "events",
+      "logs"
+    ]
+  ]
+}

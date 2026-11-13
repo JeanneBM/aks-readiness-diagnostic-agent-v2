@@ -1,0 +1,9 @@
+{
+  "split": "dev",
+  "expected": "insufficient_evidence",
+  "injected": "probe_port_mismatch",
+  "framework": "go-net-http",
+  "origin": "synthetic",
+  "basis": "net/http logs nothing by default; connection refused alone does not identify the cause.",
+  "citations": []
+}

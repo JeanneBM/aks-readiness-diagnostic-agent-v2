@@ -1,0 +1,15 @@
+{
+  "split": "dev",
+  "expected": "probe_port_mismatch",
+  "injected": "probe_port_mismatch",
+  "framework": "aspnetcore",
+  "origin": "synthetic",
+  "basis": ".NET 8 images listen on 8080 by default (previously 80); a probe left on 80 is refused.",
+  "citations": [
+    [
+      "probe",
+      "events",
+      "logs"
+    ]
+  ]
+}

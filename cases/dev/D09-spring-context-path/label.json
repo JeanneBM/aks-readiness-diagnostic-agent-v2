@@ -1,0 +1,15 @@
+{
+  "split": "dev",
+  "expected": "probe_path_mismatch",
+  "injected": "probe_path_mismatch",
+  "framework": "spring-boot",
+  "origin": "synthetic",
+  "basis": "server.servlet.context-path=/api; the probe omits it.",
+  "citations": [
+    [
+      "probe",
+      "events",
+      "logs"
+    ]
+  ]
+}

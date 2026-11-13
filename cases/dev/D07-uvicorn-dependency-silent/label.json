@@ -1,0 +1,9 @@
+{
+  "split": "dev",
+  "expected": "insufficient_evidence",
+  "injected": "dependency_unavailable",
+  "framework": "uvicorn",
+  "origin": "synthetic",
+  "basis": "Readiness returns 503; the app does not log why.",
+  "citations": []
+}

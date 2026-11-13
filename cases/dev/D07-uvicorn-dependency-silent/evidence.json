@@ -1,0 +1,55 @@
+{
+  "schema": 2,
+  "target": "selected-pod/selected-container",
+  "observations": [
+    {
+      "id": "status",
+      "kind": "pod_status",
+      "source": "pod/status",
+      "text": "selected container ready=False; Pod Ready=False since 2026-11-13T10:00:05Z",
+      "data": {
+        "container_ready": false,
+        "pod_ready": "False",
+        "pod_ready_since": "2026-11-13T10:00:05Z"
+      }
+    },
+    {
+      "id": "probe",
+      "kind": "probe_config",
+      "source": "pod/spec/readinessProbe/httpGet",
+      "text": "{\"scheme\": \"HTTP\", \"port\": 8000, \"path\": \"/ready\"}",
+      "data": {
+        "scheme": "HTTP",
+        "port": 8000,
+        "path": "/ready"
+      }
+    },
+    {
+      "id": "events",
+      "kind": "probe_failures",
+      "source": "pod/events/readiness",
+      "text": "2026-11-13T10:00:55Z x12: Readiness probe failed: HTTP probe failed with statuscode: 503",
+      "data": {
+        "events": [
+          {
+            "message": "Readiness probe failed: HTTP probe failed with statuscode: 503",
+            "count": 12,
+            "last_seen": "2026-11-13T10:00:55Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "logs",
+      "kind": "app_log",
+      "source": "container/logs/all",
+      "text": "2026-11-13T10:00:01.000000000Z INFO:     Started server process [1]\n2026-11-13T10:00:01.000000000Z INFO:     Waiting for application startup.\n2026-11-13T10:00:01.000000000Z INFO:     Application startup complete.\n2026-11-13T10:00:01.000000000Z INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)\n2026-11-13T10:00:10.000000000Z INFO:     10.244.0.1:40010 - \"GET /ready HTTP/1.1\" 503 Service Unavailable\n2026-11-13T10:00:15.000000000Z INFO:     10.244.0.1:40015 - \"GET /ready HTTP/1.1\" 503 Service Unavailable\n2026-11-13T10:00:20.000000000Z INFO:     10.244.0.1:40020 - \"GET /ready HTTP/1.1\" 503 Service Unavailable"
+    },
+    {
+      "id": "snapshot",
+      "kind": "limitation",
+      "source": "collector",
+      "text": "Reads are sequential, not atomic. Logs cover the current container instance only."
+    }
+  ]
+}

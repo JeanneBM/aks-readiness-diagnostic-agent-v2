@@ -1,0 +1,9 @@
+{
+  "split": "dev",
+  "expected": "insufficient_evidence",
+  "injected": "insufficient_evidence",
+  "framework": "uvicorn",
+  "origin": "synthetic",
+  "basis": "The only failure Event names port 9000; the probe now targets 8000, which the server listens on.",
+  "citations": []
+}

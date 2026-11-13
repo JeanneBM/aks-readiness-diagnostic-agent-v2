@@ -1,0 +1,55 @@
+{
+  "schema": 2,
+  "target": "selected-pod/selected-container",
+  "observations": [
+    {
+      "id": "status",
+      "kind": "pod_status",
+      "source": "pod/status",
+      "text": "selected container ready=False; Pod Ready=False since 2026-11-13T10:00:05Z",
+      "data": {
+        "container_ready": false,
+        "pod_ready": "False",
+        "pod_ready_since": "2026-11-13T10:00:05Z"
+      }
+    },
+    {
+      "id": "probe",
+      "kind": "probe_config",
+      "source": "pod/spec/readinessProbe/httpGet",
+      "text": "{\"scheme\": \"HTTP\", \"port\": 9090, \"path\": \"/ready\"}",
+      "data": {
+        "scheme": "HTTP",
+        "port": 9090,
+        "path": "/ready"
+      }
+    },
+    {
+      "id": "events",
+      "kind": "probe_failures",
+      "source": "pod/events/readiness",
+      "text": "2026-11-13T10:00:55Z x12: Readiness probe failed: Get \"http://10.244.0.17:9090/ready\": dial tcp 10.244.0.17:9090: connect: connection refused",
+      "data": {
+        "events": [
+          {
+            "message": "Readiness probe failed: Get \"http://10.244.0.17:9090/ready\": dial tcp 10.244.0.17:9090: connect: connection refused",
+            "count": 12,
+            "last_seen": "2026-11-13T10:00:55Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "logs-empty",
+      "kind": "limitation",
+      "source": "collector",
+      "text": "The container has written no log lines."
+    },
+    {
+      "id": "snapshot",
+      "kind": "limitation",
+      "source": "collector",
+      "text": "Reads are sequential, not atomic. Logs cover the current container instance only."
+    }
+  ]
+}

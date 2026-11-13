@@ -1,0 +1,9 @@
+{
+  "split": "dev",
+  "expected": "insufficient_evidence",
+  "injected": "probe_port_mismatch",
+  "framework": "uvicorn",
+  "origin": "synthetic",
+  "basis": "Refusals and 503s both current, plus a dependency error: more than one cause fits.",
+  "citations": []
+}

@@ -1,0 +1,9 @@
+{
+  "split": "dev",
+  "expected": "insufficient_evidence",
+  "injected": "probe_path_mismatch",
+  "framework": "uvicorn",
+  "origin": "synthetic",
+  "basis": "Probe on /healthz, app serves /ready. Default logs show the 404 but no route list.",
+  "citations": []
+}

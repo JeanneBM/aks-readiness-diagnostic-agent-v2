@@ -1,0 +1,13 @@
+{
+  "split": "dev",
+  "expected": "healthy",
+  "injected": "healthy",
+  "framework": "uvicorn",
+  "origin": "synthetic",
+  "basis": "Default uvicorn startup and access log; Ready=True and no readiness failure Events.",
+  "citations": [
+    [
+      "status"
+    ]
+  ]
+}

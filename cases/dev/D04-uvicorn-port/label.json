@@ -1,0 +1,15 @@
+{
+  "split": "dev",
+  "expected": "probe_port_mismatch",
+  "injected": "probe_port_mismatch",
+  "framework": "uvicorn",
+  "origin": "synthetic",
+  "basis": "Server on 0.0.0.0:8000, probe on 8080.",
+  "citations": [
+    [
+      "probe",
+      "events",
+      "logs"
+    ]
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "split": "dev",
+  "expected": "probe_port_mismatch",
+  "injected": "probe_port_mismatch",
+  "framework": "werkzeug",
+  "origin": "synthetic",
+  "basis": "--host=0.0.0.0 prints both a loopback and a Pod IP line; it is not loopback-only.",
+  "citations": [
+    [
+      "probe",
+      "events",
+      "logs"
+    ]
+  ]
+}

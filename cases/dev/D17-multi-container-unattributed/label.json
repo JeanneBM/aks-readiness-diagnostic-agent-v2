@@ -1,0 +1,9 @@
+{
+  "split": "dev",
+  "expected": "insufficient_evidence",
+  "injected": "probe_port_mismatch",
+  "framework": "uvicorn",
+  "origin": "synthetic",
+  "basis": "Two containers and failure Events without a fieldPath: they cannot be attributed.",
+  "citations": []
+}
