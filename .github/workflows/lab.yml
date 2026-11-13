@@ -27,7 +27,7 @@ jobs:
       - name: Replay rules on valid recordings
         if: always()
         run: readiness-triage evaluate --cases "recordings/run-${{ github.run_id }}" --output "recordings/replay-${{ github.run_id }}"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: kind-recording-${{ github.run_id }}
