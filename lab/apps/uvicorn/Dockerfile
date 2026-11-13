@@ -1,4 +1,4 @@
-FROM python:3.12-slim
+FROM python:3.15-slim
 RUN pip install --no-cache-dir uvicorn==0.32.1
 WORKDIR /app
 COPY app.py .
