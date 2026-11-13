@@ -1,0 +1,7 @@
+INFO:     Started server process [280]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8765 (Press CTRL+C to quit)
+WARNING:app:readiness check failed: <urlopen error [Errno -2] Name or service not known>
+INFO:     127.0.0.1:42164 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:42170 - "GET /healthz HTTP/1.1" 404 Not Found
