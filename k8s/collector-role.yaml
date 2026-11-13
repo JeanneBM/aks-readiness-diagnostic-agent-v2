@@ -1,0 +1,16 @@
+# Least privilege for `readiness-triage collect` in one namespace: read one Pod,
+# list its Events, read its logs. No Secrets, no writes, no exec.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: readiness-triage-reader
+rules:
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["get"]
+  - apiGroups: [""]
+    resources: ["pods/log"]
+    verbs: ["get"]
+  - apiGroups: [""]
+    resources: ["events"]
+    verbs: ["list"]
